@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { ReactComponent as LogoIcon } from '@/assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from '@/assets/images/icon_menu.svg';
 import { menu_1st, ROUTES } from '@/utils/routes';
+import ReactPortal from '@/components/ReactPortal';
+import MenuBox from '@/components/header/MenuBox';
 
 const Header = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [position, setPosition] = useState<{ top: number; left: number }>({
+    top: 0,
+    left: 0,
+  });
+
+  useEffect(() => {
+    if (ref.current) {
+      setPosition({
+        top: ref?.current?.offsetTop,
+        left: ref?.current?.offsetLeft,
+      });
+    }
+  }, []);
+
   return (
     <header className='bg-dark-500 h-auto'>
       <div className='container-xl flex-between h-16'>
@@ -26,11 +44,16 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-          <div className='cursor-pointer'>
+          <div
+            ref={ref}
+            className='cursor-pointer'
+            onClick={() => setToggle(!toggle)}
+          >
             <MenuIcon />
           </div>
         </div>
       </div>
+      <ReactPortal>{toggle && <MenuBox position={position} />}</ReactPortal>
     </header>
   );
 };

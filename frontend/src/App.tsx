@@ -17,6 +17,7 @@ function App() {
               // PRIVATE ROUTES
               return (
                 <Route
+                  key={route.path}
                   path={route.path}
                   element={<ProtectedRoute>{route.element}</ProtectedRoute>}
                 />
@@ -24,7 +25,13 @@ function App() {
             }
 
             // PUBLIC ROUTES
-            return <Route path={route.path} element={route.element} />;
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            );
           })}
         </Routes>
       </Layout>
