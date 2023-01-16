@@ -5,6 +5,7 @@ import Pie from '@/components/Pie';
 const HomePage = () => {
   return (
     <section id='top-page' className='w-full h-auto'>
+      {/* BANNER */}
       <div className='w-full h-auto tablet:h-[312px] flex tablet_max:flex-col container-xl'>
         <div className='w-full tablet:w-[42.1875%] h-full aspect-square tablet:aspect-video relative'>
           <img
@@ -20,6 +21,8 @@ const HomePage = () => {
           <img alt='top-page-img-right' src={BannerRight} />
         </div>
       </div>
+
+      {/* SERVICES */}
     </section>
   );
 };
