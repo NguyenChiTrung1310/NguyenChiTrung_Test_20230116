@@ -52,13 +52,24 @@ module.exports = {
           justifyContent: 'center',
           alignItems: 'center',
         },
-        '.container-xl': {
+        '.container': {
           maxWidth: '100%',
           width: '100%',
           margin: 'auto',
           padding: '0 20px',
           '@screen xl': {
             maxWidth: '960px',
+            width: '100%',
+            padding: 0,
+          },
+        },
+        '.container-xl': {
+          maxWidth: '100%',
+          width: '100%',
+          margin: 'auto',
+          padding: '0 20px',
+          '@screen xl': {
+            maxWidth: '1280px',
             width: '100%',
             padding: 0,
           },

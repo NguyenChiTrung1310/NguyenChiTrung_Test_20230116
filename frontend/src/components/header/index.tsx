@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header className='bg-dark-500 h-auto'>
-      <div className='container-xl flex-between h-16'>
+      <div className='container flex-between h-16'>
         <NavLink to={ROUTES.HOME}>
           <LogoIcon />
         </NavLink>

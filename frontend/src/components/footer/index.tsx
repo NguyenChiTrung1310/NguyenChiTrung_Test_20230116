@@ -29,8 +29,8 @@ const menuFooter = [
 
 const Footer = () => {
   return (
-    <footer className='w-full h-auto bg-dark-500 fixed bottom-0'>
-      <ul className='container-xl w-full h-32 flex items-center gap-11 text-white'>
+    <footer className='w-full h-auto bg-dark-500'>
+      <ul className='container w-full h-32 flex items-center gap-11 text-white'>
         {menuFooter.map((menu) => (
           <li key={menu.name}>
             <p className='text-[11px] leading-4 tracking-[0.033px]'>
