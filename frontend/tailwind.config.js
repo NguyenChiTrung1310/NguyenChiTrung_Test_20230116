@@ -4,6 +4,12 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      screens: {
+        tablet: '960px',
+        xl: '1280px',
+        tablet_max: { max: '959px' },
+        xl_max: { max: '1279px' },
+      },
       fontFamily: {
         sans: ['Inter'],
         notoSan: ['Noto Sans JP', 'sans-serif'],
@@ -35,6 +41,35 @@ module.exports = {
       addComponents({
         '.primary-300-400': {
           background: 'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
+        },
+        '.flex-between': {
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        },
+        '.flex-center': {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+        '.container-xl': {
+          maxWidth: '100%',
+          width: '100%',
+          margin: 'auto',
+          padding: '0 20px',
+          '@screen xl': {
+            maxWidth: '960px',
+            width: '100%',
+            padding: 0,
+          },
+        },
+      });
+      addBase({
+        p: {
+          fontSize: '16px',
+          lineHeight: '23px',
+          fontStyle: 'normal',
+          fontWeight: 300,
         },
       });
     }),
