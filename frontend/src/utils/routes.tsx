@@ -29,7 +29,7 @@ type IMenu = {
 export enum ROUTES {
   HOME = '/',
   DASHBOARD = '/dashboard',
-  PROFILE = '/profile',
+  RECORD = '/my-record',
   CHALLENGE = '/challenge',
   INFO = '/info',
   WEIGHT_CHART = '/weight-chart',
@@ -67,7 +67,7 @@ export const ProtectedRoute: React.FC<Props> = ({ children }) => {
 
 export const menu_1st: IMenu[] = [
   {
-    path: ROUTES.PROFILE,
+    path: ROUTES.RECORD,
     name: '自分の記録',
     icon: <MemoIcon />,
   },
@@ -85,7 +85,7 @@ export const menu_1st: IMenu[] = [
 
 export const menu_2nd: IMenu[] = [
   {
-    path: ROUTES.PROFILE,
+    path: ROUTES.RECORD,
     name: '自分の記録',
   },
   {
