@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { ReactComponent as LogoIcon } from '@/assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from '@/assets/images/icon_menu.svg';
@@ -14,6 +14,7 @@ const Header = () => {
     top: 0,
     left: 0,
   });
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (ref.current) {
@@ -36,7 +37,14 @@ const Header = () => {
             <ul className='flex-center text-white'>
               {menu_1st.map((menu) => (
                 <NavLink key={menu.path} to={menu.path}>
-                  <li className='flex-center p-4'>
+                  <li
+                    className={[
+                      'flex-center p-4',
+                      pathname === menu.path && 'text-primary',
+                    ]
+                      .filter(Boolean)
+                      .join(' ')}
+                  >
                     <span>{menu.icon}</span>
                     <p className='pl-2'>{menu.name}</p>
                   </li>

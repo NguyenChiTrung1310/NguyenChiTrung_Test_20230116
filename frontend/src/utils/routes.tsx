@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 import HomePage from '@/pages/Home';
 import Page404 from '@/pages/Page404';
-import DashboardPage from '@/pages/Dashboard';
+import MyRecordPage from '@/pages/MyRecord';
 import { useAuth } from '@/context/Auth';
 
 import { ReactComponent as MemoIcon } from '@/assets/images/icon_memo.svg';
@@ -28,7 +28,6 @@ type IMenu = {
 
 export enum ROUTES {
   HOME = '/',
-  DASHBOARD = '/dashboard',
   RECORD = '/my-record',
   CHALLENGE = '/challenge',
   INFO = '/info',
@@ -45,8 +44,8 @@ export const routes: IRoutes[] = [
     element: <HomePage />,
   },
   {
-    path: ROUTES.DASHBOARD,
-    element: <DashboardPage />,
+    path: ROUTES.RECORD,
+    element: <MyRecordPage />,
     private: true,
   },
   {
