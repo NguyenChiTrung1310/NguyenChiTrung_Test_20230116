@@ -1,15 +1,18 @@
+import { useEffect, useState } from 'react';
+
 import BannerLeft from '@/assets/images/home/d01.jpg';
 import BannerRight from '@/assets/images/home/main_graph.png';
 import MorningImg from '@/assets/images/home/morning.png';
 import LunchImg from '@/assets/images/home/lunch.png';
 import DinnerImg from '@/assets/images/home/dinner.png';
 import SnackImg from '@/assets/images/home/snack.png';
-import Pie from '@/components/Pie';
-import { useEffect, useState } from 'react';
-import Tag from '@/components/Tag';
-import Button from '@/components/@cores/Button';
+
 import { IList } from '@/interfaces';
 import { filterListPerPage, listDataTopPage } from '@/utils/utils';
+
+import Pie from '@/components/Pie';
+import Tag from '@/components/Tag';
+import Button from '@/components/@cores/Button';
 
 const HomePage = () => {
   const [list, setList] = useState<IList[]>(listDataTopPage);

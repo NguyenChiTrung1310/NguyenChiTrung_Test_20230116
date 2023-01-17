@@ -1,10 +1,12 @@
 import React from 'react';
-import Tag from '@/components/Tag';
+
 import MyRecordChart from '@/assets/images/record/body-record.png';
+
+import Tag from '@/components/Tag';
+import MyDiary from '@/pages/MyRecord/MyDiary';
 import MyExercise from '@/pages/MyRecord/MyExercise';
 
 import './style.scss';
-import MyDiary from '@/pages/MyRecord/MyDiary';
 
 const MyRecordPage = () => {
   return (

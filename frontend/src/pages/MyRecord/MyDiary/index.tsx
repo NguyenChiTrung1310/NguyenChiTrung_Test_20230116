@@ -1,7 +1,9 @@
-import Button from '@/components/@cores/Button';
+import React, { memo, useEffect, useState } from 'react';
+
 import { IListDiariesRecord } from '@/interfaces';
 import { filterListPerPage, listDiariesRecord } from '@/utils/utils';
-import React, { memo, useEffect, useState } from 'react';
+
+import Button from '@/components/@cores/Button';
 
 const MyDiary = () => {
   const [list, setList] = useState<IListDiariesRecord[]>(listDiariesRecord);

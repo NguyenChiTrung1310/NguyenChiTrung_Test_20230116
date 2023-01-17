@@ -1,9 +1,11 @@
-import Button from '@/components/@cores/Button';
-import Tag from '@/components/Tag';
-import { IListColumnData } from '@/interfaces';
-import { filterListPerPage, listColumnData } from '@/utils/utils';
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
+import { IListColumnData } from '@/interfaces';
+import { filterListPerPage, listColumnData } from '@/utils/utils';
+
+import Tag from '@/components/Tag';
+import Button from '@/components/@cores/Button';
 
 const ColumnPage = () => {
   const [list, setList] = useState<IListColumnData[]>(listColumnData);
