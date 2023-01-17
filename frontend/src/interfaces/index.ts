@@ -15,3 +15,10 @@ export type IListDiariesRecord = {
   title: string;
   description: string;
 };
+
+export type IListColumnData = {
+  thumbnail: string;
+  tagDate: string;
+  tagTime: string;
+  title: string;
+};

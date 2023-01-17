@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface Props {
-  text: string;
+  text: string | ReactNode;
   className?: string;
 }
 
@@ -9,7 +9,7 @@ const Tag: React.FC<Props> = ({ text, className }) => {
   return (
     <div
       className={[
-        'w-full min-w-[120px] h-auto min-h-[32px] bg-primary-300 flex-center',
+        'w-full min-w-[120px] h-auto min-h-[32px] bg-primary-300 flex-center p-1',
         className,
       ]
         .filter(Boolean)

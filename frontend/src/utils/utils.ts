@@ -1,4 +1,9 @@
-import { IList, IListDiariesRecord, IListExerciseRecord } from '@/interfaces';
+import {
+  IList,
+  IListColumnData,
+  IListDiariesRecord,
+  IListExerciseRecord,
+} from '@/interfaces';
 
 export const filterListPerPage = (arr: any, num: number) => {
   // FILTER LIST BLOGS
@@ -289,5 +294,122 @@ export const listDiariesRecord: IListDiariesRecord[] = [
     title: '私の日記の記録が一部表示されます。',
     description:
       'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
+  },
+];
+
+export const listColumnData: IListColumnData[] = [
+  {
+    thumbnail: '../../assets/images/column/column-1.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-2.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-3.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-4.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-5.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-6.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-7.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-8.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-1.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-2.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-3.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-4.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-5.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-6.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-7.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-8.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-6.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-7.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+  },
+  {
+    thumbnail: '../../assets/images/column/column-8.jpg',
+    tagDate: '2021.05.17',
+    tagTime: '23:25',
+    title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
   },
 ];
