@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 import HomePage from '@/pages/Home';
 import Page404 from '@/pages/Page404';
 import MyRecordPage from '@/pages/MyRecord';
+import ColumnPage from '@/pages/ColumnPage';
 import { useAuth } from '@/context/Auth';
 
 import { ReactComponent as MemoIcon } from '@/assets/images/icon_memo.svg';
@@ -34,7 +35,7 @@ export enum ROUTES {
   WEIGHT_CHART = '/weight-chart',
   GOAL = '/goal',
   MY_COURSES = '/my-courses',
-  COLUMN_LIST = '/column-list',
+  COLUMNS = '/columns',
   SETTING = '/setting',
 }
 
@@ -47,6 +48,10 @@ export const routes: IRoutes[] = [
     path: ROUTES.RECORD,
     element: <MyRecordPage />,
     private: true,
+  },
+  {
+    path: ROUTES.COLUMNS,
+    element: <ColumnPage />,
   },
   {
     path: '*',
@@ -100,7 +105,7 @@ export const menu_2nd: IMenu[] = [
     name: '選択中のコース',
   },
   {
-    path: ROUTES.COLUMN_LIST,
+    path: ROUTES.COLUMNS,
     name: 'コラム一覧',
   },
   {
