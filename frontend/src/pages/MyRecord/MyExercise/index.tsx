@@ -2,6 +2,8 @@ import React, { memo, useState } from 'react';
 import { IListExerciseRecord } from '@/interfaces';
 import { listExerciseRecord } from '@/utils/utils';
 
+import '../style.scss';
+
 const formatDataListRecord = () => {
   let data = [...listExerciseRecord];
   let idx = 0;
@@ -35,8 +37,11 @@ const MyExercise = () => {
     formatDataListRecord()
   );
   return (
-    <div className='w-full overflow-y-auto max-h-[192px] relative'>
-      <table className='table-fixed mt-8 w-full h-auto'>
+    <div
+      id='my-exercise'
+      className='my-exercise w-full overflow-y-scroll max-h-[192px] relative px-6'
+    >
+      <table className='table-fixed mt-8 w-full h-auto table-my-exercise'>
         <thead>
           <tr>
             <th scope='col' className='tablet_max:w-[500px] w-[100%]' />

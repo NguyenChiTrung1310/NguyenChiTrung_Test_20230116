@@ -63,6 +63,8 @@ const MyRecordPage = () => {
           </div>
           <MyExercise />
         </div>
+
+        {/* MY DIARY */}
       </div>
     </section>
   );

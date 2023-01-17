@@ -7,7 +7,6 @@
         width: 288px;
         border: 24px solid theme('colors.primary.300');
     }
-
     .record-1 {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/record/MyRecommend-1.jpg');
         background-color: #000000;
@@ -22,5 +21,21 @@
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/record/MyRecommend-3.jpg');
         background-color: #000000;
         background-blend-mode: multiply, luminosity;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: theme('colors.gray.400');
+    }
+    
+    ::-webkit-scrollbar
+    {
+        width: 6px;
+        background-color: theme('colors.gray.400');
+    }
+    
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 30px;
+        background-color: theme('colors.primary.300');
     }
 }
