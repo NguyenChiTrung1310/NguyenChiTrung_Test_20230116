@@ -17,11 +17,10 @@ const AuthContext = createContext<IAuthContext>({
 });
 
 const AuthProvider: React.FC<Props> = ({ children }) => {
-  const [token, setToken] = useState<string | null>('ss');
+  const [token, setToken] = useState<string | null>('');
 
   const handleLogin = async () => {
     const token = 'ok';
-
     setToken(token);
   };
 

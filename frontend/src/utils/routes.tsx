@@ -5,6 +5,7 @@ import HomePage from '@/pages/Home';
 import Page404 from '@/pages/Page404';
 import MyRecordPage from '@/pages/MyRecord';
 import ColumnPage from '@/pages/ColumnPage';
+import LoginPage from '@/pages/LoginPage';
 import { useAuth } from '@/context/Auth';
 
 import { ReactComponent as MemoIcon } from '@/assets/images/icon_memo.svg';
@@ -37,12 +38,14 @@ export enum ROUTES {
   MY_COURSES = '/my-courses',
   COLUMNS = '/columns',
   SETTING = '/setting',
+  LOGIN = '/login',
 }
 
 export const routes: IRoutes[] = [
   {
     path: ROUTES.HOME,
     element: <HomePage />,
+    private: true,
   },
   {
     path: ROUTES.RECORD,
@@ -54,6 +57,10 @@ export const routes: IRoutes[] = [
     element: <ColumnPage />,
   },
   {
+    path: ROUTES.LOGIN,
+    element: <LoginPage />,
+  },
+  {
     path: '*',
     element: <Page404 />,
   },
@@ -63,7 +70,7 @@ export const ProtectedRoute: React.FC<Props> = ({ children }) => {
   const { token } = useAuth();
 
   if (!token) {
-    return <Navigate to='/' replace />;
+    return <Navigate to={ROUTES.LOGIN} replace />;
   }
 
   return children;
