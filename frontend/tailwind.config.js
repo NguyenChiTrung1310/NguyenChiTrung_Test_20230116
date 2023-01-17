@@ -11,7 +11,7 @@ module.exports = {
         xl_max: { max: '1279px' },
       },
       fontFamily: {
-        sans: ['Inter'],
+        inter: ['Inter'],
         notoSan: ['Noto Sans JP', 'sans-serif'],
       },
       colors: {
@@ -39,8 +39,12 @@ module.exports = {
   plugins: [
     plugin(function ({ addComponents, addBase, theme, addUtilities }) {
       addComponents({
-        '.primary-300-400': {
+        '.bg-primary-300-400': {
           background: 'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
+        },
+        '.bg-btn-primary-300-400': {
+          background:
+            'linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)',
         },
         '.flex-between': {
           display: 'flex',
