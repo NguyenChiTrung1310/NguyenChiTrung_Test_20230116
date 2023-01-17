@@ -9,94 +9,11 @@ import { useEffect, useState } from 'react';
 import Tag from '@/components/Tag';
 import Button from '@/components/@cores/Button';
 import { IList } from '@/interfaces';
-import { filterListPerPage } from '@/utils/utils';
-
-const array: IList[] = [
-  {
-    schedule: [
-      {
-        thumbnail: '../../assets/images/home/m01.jpg',
-        text: '05.21.Morning',
-      },
-      {
-        thumbnail: '../../assets/images/home/l03.jpg',
-        text: '05.21.Lunch',
-      },
-      {
-        thumbnail: '../../assets/images/home/d01.jpg',
-        text: '05.21.Dinner',
-      },
-      {
-        thumbnail: '../../assets/images/home/l01.jpg',
-        text: '05.21.Snack',
-      },
-    ],
-  },
-  {
-    schedule: [
-      {
-        thumbnail: '../../assets/images/home/m01.jpg',
-        text: '05.20.Morning',
-      },
-      {
-        thumbnail: '../../assets/images/home/l02.jpg',
-        text: '05.20.Lunch',
-      },
-      {
-        thumbnail: '../../assets/images/home/d02.jpg',
-        text: '05.20.Dinner',
-      },
-      {
-        thumbnail: '../../assets/images/home/s01.jpg',
-        text: '05.20.Snack',
-      },
-    ],
-  },
-  {
-    schedule: [
-      {
-        thumbnail: '../../assets/images/home/m01.jpg',
-        text: '05.21.Morning',
-      },
-      {
-        thumbnail: '../../assets/images/home/l03.jpg',
-        text: '05.21.Lunch',
-      },
-      {
-        thumbnail: '../../assets/images/home/d01.jpg',
-        text: '05.21.Dinner',
-      },
-      {
-        thumbnail: '../../assets/images/home/l01.jpg',
-        text: '05.21.Snack',
-      },
-    ],
-  },
-  {
-    schedule: [
-      {
-        thumbnail: '../../assets/images/home/m01.jpg',
-        text: '05.20.Morning',
-      },
-      {
-        thumbnail: '../../assets/images/home/l02.jpg',
-        text: '05.20.Lunch',
-      },
-      {
-        thumbnail: '../../assets/images/home/d02.jpg',
-        text: '05.20.Dinner',
-      },
-      {
-        thumbnail: '../../assets/images/home/s01.jpg',
-        text: '05.20.Snack',
-      },
-    ],
-  },
-];
+import { filterListPerPage, listDataTopPage } from '@/utils/utils';
 
 const HomePage = () => {
-  const [list, setList] = useState<IList[]>(array);
-  const [numPages, setNumPages] = useState<number>(2);
+  const [list, setList] = useState<IList[]>(listDataTopPage);
+  const [numPages, setNumPages] = useState<number>(8);
   const [loading, setLoading] = useState<boolean>(false);
   const [counterClick, setCounterClick] = useState<number>(1); // CLICKING COUNTER ON THE "LOAD MORE" BUTTON
 
@@ -109,8 +26,8 @@ const HomePage = () => {
     setLoading(true);
     setTimeout(() => {
       setCounterClick(counter);
-      setNumPages(counter * 2);
-      const filterList = filterListPerPage(array, counter * 2);
+      setNumPages(counter * 8);
+      const filterList = filterListPerPage(listDataTopPage, counter * 8);
       setList([...filterList]);
       setLoading(false);
     }, 500);
@@ -170,30 +87,25 @@ const HomePage = () => {
 
         {/* LIST */}
         <div>
-          {list.map((item, index) => (
-            <div
-              key={index}
-              className='w-full h-full grid grid-cols-4 gap-2 m-2'
-            >
-              {item.schedule.map((child, idx) => (
-                <div
-                  key={idx}
-                  className='w-full h-[234px] aspect-square relative'
-                >
-                  <img
-                    alt={child.text}
-                    src={child.thumbnail}
-                    className='object-cover absolute inset-0 h-full w-full'
-                  />
-                  <div className='absolute bottom-0 left-0'>
-                    <Tag text={child.text} />
-                  </div>
+          <div className='w-full h-full grid grid-cols-4 gap-2 m-2'>
+            {list.map((item: any, index: number) => (
+              <div
+                key={index}
+                className='w-full h-[234px] aspect-square relative'
+              >
+                <img
+                  alt={item.text}
+                  src={item.thumbnail}
+                  className='object-cover absolute inset-0 h-full w-full'
+                />
+                <div className='absolute bottom-0 left-0'>
+                  <Tag text={item.text} />
                 </div>
-              ))}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
 
-          {list.length >= 2 && list.length < array.length && (
+          {list.length >= 8 && list.length < listDataTopPage.length && (
             <div className='w-full'>
               <Button
                 loading={loading}
