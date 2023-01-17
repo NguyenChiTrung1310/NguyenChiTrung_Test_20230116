@@ -5,15 +5,53 @@ import LunchImg from '@/assets/images/home/lunch.png';
 import DinnerImg from '@/assets/images/home/dinner.png';
 import SnackImg from '@/assets/images/home/snack.png';
 import Pie from '@/components/Pie';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Tag from '@/components/Tag';
 import Button from '@/components/@cores/Button';
-
-type IList = {
-  schedule: { thumbnail: string; text: string }[];
-};
+import { IList } from '@/interfaces';
+import { filterListPerPage } from '@/utils/utils';
 
 const array: IList[] = [
+  {
+    schedule: [
+      {
+        thumbnail: '../../assets/images/home/m01.jpg',
+        text: '05.21.Morning',
+      },
+      {
+        thumbnail: '../../assets/images/home/l03.jpg',
+        text: '05.21.Lunch',
+      },
+      {
+        thumbnail: '../../assets/images/home/d01.jpg',
+        text: '05.21.Dinner',
+      },
+      {
+        thumbnail: '../../assets/images/home/l01.jpg',
+        text: '05.21.Snack',
+      },
+    ],
+  },
+  {
+    schedule: [
+      {
+        thumbnail: '../../assets/images/home/m01.jpg',
+        text: '05.20.Morning',
+      },
+      {
+        thumbnail: '../../assets/images/home/l02.jpg',
+        text: '05.20.Lunch',
+      },
+      {
+        thumbnail: '../../assets/images/home/d02.jpg',
+        text: '05.20.Dinner',
+      },
+      {
+        thumbnail: '../../assets/images/home/s01.jpg',
+        text: '05.20.Snack',
+      },
+    ],
+  },
   {
     schedule: [
       {
@@ -58,6 +96,28 @@ const array: IList[] = [
 
 const HomePage = () => {
   const [list, setList] = useState<IList[]>(array);
+  const [numPages, setNumPages] = useState<number>(2);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [counterClick, setCounterClick] = useState<number>(1); // CLICKING COUNTER ON THE "LOAD MORE" BUTTON
+
+  useEffect(() => {
+    const filterList = filterListPerPage(list, numPages);
+    console.log(filterList);
+
+    setList(filterList);
+  }, []);
+
+  const onLoadMore = (counter: number) => {
+    setLoading(true);
+    setTimeout(() => {
+      setCounterClick(counter);
+      setNumPages(counter * 2);
+      const filterList = filterListPerPage(array, counter * 2);
+      setList([...filterList]);
+      setLoading(false);
+    }, 500);
+  };
+
   return (
     <section id='top-page' className='w-full h-auto'>
       {/* BANNER */}
@@ -134,9 +194,19 @@ const HomePage = () => {
               ))}
             </div>
           ))}
-          <div className='w-full'>
-            <Button className='block mt-5 mx-auto'>記録をもっと見る</Button>
-          </div>
+
+          {list.length >= 2 && list.length < array.length && (
+            <div className='w-full'>
+              <Button
+                loading={loading}
+                type='button'
+                onClick={() => onLoadMore(counterClick + 1)}
+                className='mt-5 mx-auto'
+              >
+                記録をもっと見る
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
