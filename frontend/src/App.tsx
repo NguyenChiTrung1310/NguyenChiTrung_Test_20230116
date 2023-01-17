@@ -11,7 +11,6 @@ function App() {
     <AuthProvider>
       <Layout>
         <Routes>
-          {/* <Route index element={<HomePage />} /> */}
           {routes.map((route) => {
             if (route?.private) {
               // PRIVATE ROUTES
