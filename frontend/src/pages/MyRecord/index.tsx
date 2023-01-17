@@ -4,6 +4,7 @@ import MyRecordChart from '@/assets/images/record/body-record.png';
 import MyExercise from '@/pages/MyRecord/MyExercise';
 
 import './style.scss';
+import MyDiary from '@/pages/MyRecord/MyDiary';
 
 const MyRecordPage = () => {
   return (
@@ -65,6 +66,12 @@ const MyRecordPage = () => {
         </div>
 
         {/* MY DIARY */}
+        <div className='mt-14 w-full h-auto'>
+          <p className='text-[22px] font-normal font-inter leading-[27px] tracking-[0.11px] uppercase text-dark-500'>
+            MY DIARY
+          </p>
+          <MyDiary />
+        </div>
       </div>
     </section>
   );

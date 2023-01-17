@@ -1,6 +1,6 @@
 import { IList, IListDiariesRecord, IListExerciseRecord } from '@/interfaces';
 
-export const filterListPerPage = (arr: IList[], num: number) => {
+export const filterListPerPage = (arr: any, num: number) => {
   // FILTER LIST BLOGS
   const filterList = [...arr].slice(0, num);
   return filterList;
