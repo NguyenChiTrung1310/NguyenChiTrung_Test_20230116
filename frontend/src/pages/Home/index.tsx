@@ -102,8 +102,6 @@ const HomePage = () => {
 
   useEffect(() => {
     const filterList = filterListPerPage(list, numPages);
-    console.log(filterList);
-
     setList(filterList);
   }, []);
 

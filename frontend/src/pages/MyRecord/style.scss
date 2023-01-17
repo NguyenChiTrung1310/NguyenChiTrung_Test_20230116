@@ -1,0 +1,26 @@
+#my-record-page {
+    .record-1, .record-2, .record-3 {
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 288px;
+        width: 288px;
+        border: 24px solid theme('colors.primary.300');
+    }
+
+    .record-1 {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/record/MyRecommend-1.jpg');
+        background-color: #000000;
+        background-blend-mode: multiply, luminosity;
+    }
+    .record-2 {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/record/MyRecommend-2.jpg');
+        background-color: #000000;
+        background-blend-mode: multiply, luminosity;
+    }
+    .record-3 {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/record/MyRecommend-3.jpg');
+        background-color: #000000;
+        background-blend-mode: multiply, luminosity;
+    }
+}
