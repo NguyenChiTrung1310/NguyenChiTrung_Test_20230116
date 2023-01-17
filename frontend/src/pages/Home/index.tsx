@@ -87,8 +87,8 @@ const HomePage = () => {
 
         {/* LIST */}
         <div>
-          <div className='w-full h-full grid grid-cols-4 gap-2 m-2'>
-            {list.map((item: any, index: number) => (
+          <div className='w-full h-full grid grid-cols-4 gap-2'>
+            {list.map((item: IList, index: number) => (
               <div
                 key={index}
                 className='w-full h-[234px] aspect-square relative'
