@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import BannerLeft from '@/assets/images/home/d01.jpg';
-import BannerRight from '@/assets/images/home/main_graph.png';
 import MorningImg from '@/assets/images/home/morning.png';
 import LunchImg from '@/assets/images/home/lunch.png';
 import DinnerImg from '@/assets/images/home/dinner.png';
@@ -13,6 +12,7 @@ import { filterListPerPage, listDataTopPage } from '@/utils/utils';
 import Pie from '@/components/Pie';
 import Tag from '@/components/Tag';
 import Button from '@/components/@cores/Button';
+import BannerChart from '@/pages/Home/BannerChart';
 
 const HomePage = () => {
   const [list, setList] = useState<IList[]>(listDataTopPage);
@@ -50,8 +50,8 @@ const HomePage = () => {
             <Pie percentage={75} colour='white' />
           </div>
         </div>
-        <div className='w-full tablet:w-[57.8125%] bg-dark-600 h-full flex-center'>
-          <img alt='top-page-img-right' src={BannerRight} />
+        <div className='w-full tablet:w-[57.8125%] py-2 px-8 bg-dark-600 h-full '>
+          <BannerChart />
         </div>
       </div>
 

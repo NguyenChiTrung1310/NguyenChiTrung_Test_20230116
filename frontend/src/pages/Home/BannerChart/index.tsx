@@ -24,14 +24,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'bottom' as const,
-      align: 'start' as const,
-      labels: {
-        boxWidth: 56,
-        boxHeight: 24,
-        useBorderRadius: true,
-        borderRadius: 11,
-      },
+      display: false,
     },
   },
   maintainAspectRatio: false,
@@ -88,8 +81,8 @@ export const data = {
   ],
 };
 
-const BodyRecordChart = () => {
+const BannerChart = () => {
   return <Line width='100%' height={250} options={options} data={data} />;
 };
 
-export default BodyRecordChart;
+export default BannerChart;
