@@ -1,7 +1,7 @@
 import { useAuth } from '@/context/Auth';
 import { menu_1st, menu_2nd } from '@/utils/routes';
-import React, { Dispatch, SetStateAction, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { Dispatch, SetStateAction } from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface Props {
   position: {
@@ -12,14 +12,7 @@ interface Props {
 }
 
 const MenuBox: React.FC<Props> = ({ position, setToggle }) => {
-  const navigate = useNavigate();
   const { onLogout, token } = useAuth();
-
-  useEffect(() => {
-    if (token) {
-      navigate('/');
-    }
-  }, [token]);
 
   return (
     <div
@@ -53,7 +46,10 @@ const MenuBox: React.FC<Props> = ({ position, setToggle }) => {
         ))}
         {token && (
           <li
-            onClick={onLogout}
+            onClick={() => {
+              onLogout();
+              setToggle(false);
+            }}
             className='md:py-6 md:px-8 py-3 px-4 cursor-pointer border-b border-solid border-white-opacity-15'
           >
             Logout
