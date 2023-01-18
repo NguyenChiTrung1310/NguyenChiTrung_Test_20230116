@@ -7,6 +7,7 @@ import MyDiary from '@/pages/MyRecord/MyDiary';
 import MyExercise from '@/pages/MyRecord/MyExercise';
 
 import './style.scss';
+import BodyRecordChart from '@/pages/MyRecord/BodyRecordChart';
 
 const MyRecordPage = () => {
   return (
@@ -46,15 +47,29 @@ const MyRecordPage = () => {
         </div>
 
         {/* BODY RECORD */}
-        <div className='mt-14'>
-          <img alt='body-record' src={MyRecordChart} />
+        <div className='mt-14 w-full h-auto bg-dark-500 py-4 px-6'>
+          <div className='grid grid-cols-12 font-inter'>
+            <div className='col-span-1'>
+              <p className='text-[15px] font-normal leading-[18px] tracking-[0.15px] text-white uppercase'>
+                BODY RECORD
+              </p>
+            </div>
+            <div className='col-span-11 ml-5'>
+              <p className='text-[22px] font-normal leading-[27px] tracking-[0.11px] text-white'>
+                2021.05.21
+              </p>
+            </div>
+          </div>
+          <div className='py-4'>
+            <BodyRecordChart />
+          </div>
         </div>
 
         {/* MY EXERCISE */}
         <div className='mt-14 w-full h-auto bg-dark-500 py-4 px-6'>
           <div className='grid grid-cols-12 font-inter'>
             <div className='col-span-1'>
-              <p className='text-[15px] font-normal leading-[18px] tracking-[0.15px] text-white'>
+              <p className='text-[15px] font-normal leading-[18px] tracking-[0.15px] text-white uppercase'>
                 MY EXERCISE
               </p>
             </div>
