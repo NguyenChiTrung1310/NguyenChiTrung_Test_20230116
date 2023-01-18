@@ -1,5 +1,5 @@
 const Page404 = () => {
-  return <div>Page404</div>;
+  return <div className='min-h-screen'>Page404</div>;
 };
 
 export default Page404;

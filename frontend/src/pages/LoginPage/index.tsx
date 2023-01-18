@@ -17,7 +17,7 @@ const LoginPage = () => {
   }, [token]);
 
   return (
-    <div className='w-full'>
+    <div className='w-full min-h-screen'>
       <div className='mt-14 block w-fit mx-auto'>
         <Button onClick={onLogin} className=''>
           Login
