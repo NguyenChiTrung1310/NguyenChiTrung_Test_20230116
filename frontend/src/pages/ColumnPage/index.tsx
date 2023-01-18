@@ -32,8 +32,8 @@ const ColumnPage = () => {
   return (
     <section id='column-page'>
       <div className='w-full container mt-14'>
-        <div className='w-full h-36 grid grid-cols-4 gap-8'>
-          <div className='bg-dark-600 flex-center flex-col'>
+        <div className='w-full h-full tablet:h-36 grid grid-cols-1 md:grid-cols-2 tablet:grid-cols-4 gap-4 tablet:gap-8'>
+          <div className='bg-dark-600 flex-center flex-col tablet_max:p-2'>
             <p className='uppercase text-primary-300 text-center text-[22px] leading-[27px] tracking-[0.11px] font-inter'>
               RECOMMENDED COLUMN
             </p>
@@ -42,7 +42,7 @@ const ColumnPage = () => {
               オススメ
             </p>
           </div>
-          <div className='bg-dark-600 flex-center flex-col'>
+          <div className='bg-dark-600 flex-center flex-col tablet_max:p-2'>
             <p className='uppercase text-primary-300 text-center text-[22px] leading-[27px] tracking-[0.11px] font-inter'>
               RECOMMENDED DIET
             </p>
@@ -51,7 +51,7 @@ const ColumnPage = () => {
               ダイエット
             </p>
           </div>
-          <div className='bg-dark-600 flex-center flex-col'>
+          <div className='bg-dark-600 flex-center flex-col tablet_max:p-2'>
             <p className='uppercase text-primary-300 text-center text-[22px] leading-[27px] tracking-[0.11px] font-inter'>
               RECOMMENDED BEAUTY
             </p>
@@ -60,7 +60,7 @@ const ColumnPage = () => {
               美容
             </p>
           </div>
-          <div className='bg-dark-600 flex-center flex-col'>
+          <div className='bg-dark-600 flex-center flex-col tablet_max:p-2'>
             <p className='uppercase text-primary-300 text-center text-[22px] leading-[27px] tracking-[0.11px] font-inter'>
               RECOMMENDED HEALTH
             </p>
@@ -73,7 +73,7 @@ const ColumnPage = () => {
 
         {/* LIST COLUMN */}
         <div className='mt-14'>
-          <div className='w-full h-full grid grid-cols-4 gap-2'>
+          <div className='w-full h-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 tablet:grid-cols-4 gap-2'>
             {list.map((item: IListColumnData, index: number) => (
               <div key={index}>
                 <div className='w-full h-[144.47px] aspect-square relative'>
@@ -113,7 +113,7 @@ const ColumnPage = () => {
                 loading={loading}
                 type='button'
                 onClick={() => onLoadMore(counterClick + 1)}
-                className='mt-5 mx-auto'
+                className='mt-5 mx-auto xs_max:min-w-full'
               >
                 記録をもっと見る
               </Button>
