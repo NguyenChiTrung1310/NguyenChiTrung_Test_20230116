@@ -36,6 +36,7 @@ module.exports = {
         },
         white: {
           DEFAULT: '#FFFFFF',
+          'opacity-15': 'rgba(255,255,255,0.15)',
         },
       },
     },
