@@ -5,8 +5,12 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        xs: '450px',
         tablet: '960px',
         xl: '1280px',
+        xs_max: { max: '449px' },
+        sm_max: { max: '639px' },
+        md_max: { max: '767px' },
         tablet_max: { max: '959px' },
         xl_max: { max: '1279px' },
       },

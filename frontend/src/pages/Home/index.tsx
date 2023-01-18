@@ -39,7 +39,7 @@ const HomePage = () => {
   return (
     <section id='top-page' className='w-full h-auto'>
       {/* BANNER */}
-      <div className='w-full h-auto tablet:h-[312px] flex tablet_max:flex-col container-xl'>
+      <div className='w-full h-auto tablet:h-[312px] flex tablet_max:flex-col tablet_max:gap-8 tablet_max:mt-8 container-xl'>
         <div className='w-full tablet:w-[42.1875%] h-full aspect-square tablet:aspect-video relative'>
           <img
             alt='top-page-img-left'
@@ -57,7 +57,7 @@ const HomePage = () => {
 
       <div className='w-full h-auto container'>
         {/* SERVICES */}
-        <div className='w-full grid grid-cols-4 py-6'>
+        <div className='w-full grid grid-cols-2 sm:grid-cols-4 sm_max:gap-10 py-6'>
           <div className='justify-self-center relative aspect-square w-[136px] h-full cursor-pointer'>
             <img
               alt='morning'
@@ -89,8 +89,8 @@ const HomePage = () => {
         </div>
 
         {/* LIST */}
-        <div>
-          <div className='w-full h-full grid grid-cols-4 gap-2'>
+        <div className='sm_max:mt-8'>
+          <div className='w-full h-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-2'>
             {list.map((item: IList, index: number) => (
               <div
                 key={index}
@@ -114,7 +114,7 @@ const HomePage = () => {
                 loading={loading}
                 type='button'
                 onClick={() => onLoadMore(counterClick + 1)}
-                className='mt-5 mx-auto'
+                className='mt-5 mx-auto xs_max:min-w-full'
               >
                 記録をもっと見る
               </Button>
