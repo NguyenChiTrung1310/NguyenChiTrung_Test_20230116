@@ -4,7 +4,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 288px;
-        width: 288px;
+        width: 100%;
         border: 24px solid theme('colors.primary.300');
     }
     .record-1 {
@@ -30,6 +30,7 @@
     ::-webkit-scrollbar
     {
         width: 6px;
+        height: 6px;
         background-color: theme('colors.gray.400');
     }
     

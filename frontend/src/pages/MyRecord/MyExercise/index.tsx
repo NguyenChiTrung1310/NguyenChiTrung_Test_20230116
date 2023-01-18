@@ -39,14 +39,14 @@ const MyExercise = () => {
   return (
     <div
       id='my-exercise'
-      className='my-exercise w-full overflow-y-scroll max-h-[192px] relative px-6'
+      className='my-exercise w-full overflow-y-scroll max-h-[192px] relative'
     >
       <table className='table-fixed mt-8 w-full h-auto table-my-exercise'>
         <thead>
           <tr>
-            <th scope='col' className='tablet_max:w-[500px] w-[100%]' />
-            <th scope='col' className='tablet_max:w-[500px] w-[40px]' />
-            <th scope='col' className='tablet_max:w-[500px] w-[100%]' />
+            <th scope='col' className='tablet_max:w-[450px] w-[100%]' />
+            <th scope='col' className='w-[40px]' />
+            <th scope='col' className='tablet_max:w-[450px] w-[100%]' />
           </tr>
         </thead>
         <tbody>

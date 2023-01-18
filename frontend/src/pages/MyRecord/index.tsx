@@ -13,7 +13,7 @@ const MyRecordPage = () => {
     <section id='my-record-page'>
       <div className='w-full container mt-14'>
         {/* SERVICES LIST */}
-        <div className='w-full grid grid-cols-3 gap-12'>
+        <div className='w-full grid grid-cols-1 tablet:grid-cols-3 gap-12'>
           <div className='record-1 uppercase flex-center flex-col'>
             <p className='font-inter text-[25px] font-normal leading-[30px] tracking-[0.125px] text-primary-300'>
               BODY RECORD

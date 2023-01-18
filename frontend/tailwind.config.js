@@ -66,7 +66,7 @@ module.exports = {
           width: '100%',
           margin: 'auto',
           padding: '0 20px',
-          '@screen xl': {
+          '@screen lg': {
             maxWidth: '960px',
             width: '100%',
             padding: 0,

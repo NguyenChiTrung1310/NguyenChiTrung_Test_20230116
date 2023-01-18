@@ -29,7 +29,7 @@ const MyDiary = () => {
 
   return (
     <div>
-      <div className='mt-2 w-full h-auto grid grid-cols-4 gap-3'>
+      <div className='mt-2 w-full h-auto grid xs:grid-cols-2 md:grid-cols-3 tablet:grid-cols-4 gap-3'>
         {list.map(({ date, time, title, description }, index) => (
           <div
             key={index}
@@ -52,7 +52,7 @@ const MyDiary = () => {
             loading={loading}
             type='button'
             onClick={() => onLoadMore(counterClick + 1)}
-            className='mt-5 mx-auto'
+            className='mt-5 mx-auto sm_max:min-w-full'
           >
             記録をもっと見る
           </Button>
