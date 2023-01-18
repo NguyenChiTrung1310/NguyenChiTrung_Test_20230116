@@ -66,7 +66,9 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <ReactPortal>{toggle && <MenuBox position={position} />}</ReactPortal>
+      <ReactPortal>
+        {toggle && <MenuBox setToggle={setToggle} position={position} />}
+      </ReactPortal>
     </header>
   );
 };

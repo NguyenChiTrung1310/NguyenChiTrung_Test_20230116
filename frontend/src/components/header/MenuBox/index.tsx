@@ -1,6 +1,6 @@
 import { useAuth } from '@/context/Auth';
 import { menu_1st, menu_2nd } from '@/utils/routes';
-import React, { useEffect } from 'react';
+import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 interface Props {
@@ -8,9 +8,10 @@ interface Props {
     top: number;
     left: number;
   };
+  setToggle: Dispatch<SetStateAction<boolean>>;
 }
 
-const MenuBox: React.FC<Props> = ({ position }) => {
+const MenuBox: React.FC<Props> = ({ position, setToggle }) => {
   const navigate = useNavigate();
   const { onLogout, token } = useAuth();
 
@@ -30,7 +31,12 @@ const MenuBox: React.FC<Props> = ({ position }) => {
     >
       <ul className='bg-gray-400 text-white'>
         {menu_1st.map((menu, idx) => (
-          <NavLink key={idx} to={menu.path} className='block md:hidden'>
+          <NavLink
+            key={idx}
+            to={menu.path}
+            className='block md:hidden'
+            onClick={() => setToggle(false)}
+          >
             <li className='flex items-center md:py-6 md:px-8 py-3 px-4 cursor-pointer border-b border-solid border-white-opacity-15'>
               <span>{menu.icon}</span>
               <p className='pl-2'>{menu.name}</p>
@@ -39,7 +45,7 @@ const MenuBox: React.FC<Props> = ({ position }) => {
         ))}
 
         {menu_2nd.map((menu, idx) => (
-          <NavLink to={menu.path} key={idx}>
+          <NavLink to={menu.path} key={idx} onClick={() => setToggle(false)}>
             <li className='md:py-6 md:px-8 py-3 px-4 cursor-pointer border-b border-solid border-white-opacity-15'>
               {menu.name}
             </li>
