@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/context/Auth';
@@ -10,9 +10,11 @@ const LoginPage = () => {
   const { onLogin, token } = useAuth();
   const navigate = useNavigate();
 
-  if (token) {
-    navigate('/');
-  }
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, [token]);
 
   return (
     <div className='w-full'>

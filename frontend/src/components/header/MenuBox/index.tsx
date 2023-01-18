@@ -1,6 +1,6 @@
 import { useAuth } from '@/context/Auth';
 import { menu_1st, menu_2nd } from '@/utils/routes';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 interface Props {
@@ -14,9 +14,12 @@ const MenuBox: React.FC<Props> = ({ position }) => {
   const navigate = useNavigate();
   const { onLogout, token } = useAuth();
 
-  if (token) {
-    navigate('/login');
-  }
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, [token]);
+
   return (
     <div
       style={{
